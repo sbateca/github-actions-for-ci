@@ -1,5 +1,4 @@
-export default class Game {
-  
+export default class Game {  
   constructor(p1, p2) {
     this.p1 = p1
     this.p2 = p2
@@ -29,13 +28,12 @@ export default class Game {
   rowWin() {
     let win = false
     for (let r = 0; r < 3; r++){
-        const row = this.board[r]
-        if (row[0] === null) { continue }
-        win = win || (row[0] === row[1] && row[0] === row[2])
+      const row = this.board[r]
+      if (row[0] === null) { continue }
+      win = win || (row[0] === row[1] && row[0] === row[2])
     }
     return win
   }
-  
   colWin() {
     let win = false
     for (let c = 0; c < 3; c++){
