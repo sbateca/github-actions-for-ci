@@ -1,5 +1,4 @@
 export default class Game {
-
   constructor (p1, p2) {
     this.p1 = p1
     this.p2 = p2
@@ -7,9 +6,9 @@ export default class Game {
       [null, null, null],
       [null, null, null],
       [null, null, null]
-    ]
-    this.player = Math.random() < 0.5 ? this.p1 : this.p2
-    this.sym = 'X'
+	  ]
+	this.player = Math.random() < 0.5 ? this.p1 : this.p2
+	this.sym = 'X'
 	}
 
   turn (row, col) {
@@ -50,5 +49,5 @@ export default class Game {
     const b = this.board
     return ((b[0][0] !== null && b[0][0] === b[1][1] && b[0][0] === b[2][2]) ||
       (b[0][2] !== null && b[0][2] === b[1][1] && b[0][2] === b[2][0]))
-	  }	  
+	  }
 }
