@@ -1,6 +1,6 @@
 export default class Game {
 
-  constructor(p1, p2) {
+  constructor (p1, p2) {
     this.p1 = p1
     this.p2 = p2
     this.board = [
@@ -11,22 +11,22 @@ export default class Game {
     this.player = Math.random() < 0.5 ? this.p1 : this.p2
     this.sym = 'X'
 	}
-  
-  turn(row, col) {
+
+  turn (row, col) {
     col = col || row
     this.board[row][col] = this.sym
 	}
-  
-  nextPlayer() {
+
+  nextPlayer () {
     this.player = this.player === this.p1 ? this.p2 : this.p1
     this.sym = this.sym === 'X' ? 'O' : 'X'
 	}
-  
-  hasWinner() {
+
+  hasWinner () {
     return this.rowWin() || this.colWin() || this.diagWin()
 	}
-  
-  rowWin() {
+
+  rowWin () {
     let win = false
     for (let r = 0; r < 3; r++){
       const row = this.board[r]
@@ -35,7 +35,8 @@ export default class Game {
 	  }
 	  return win
 	}
-  colWin() {
+
+  colWin () {
     let win = false
     for (let c = 0; c < 3; c++){
       const col = this.board
@@ -44,8 +45,8 @@ export default class Game {
 	  }
 	  return win
 	}
-  
-  diagWin() {
+
+  diagWin () {
     const b = this.board
     return ((b[0][0] !== null && b[0][0] === b[1][1] && b[0][0] === b[2][2]) ||
       (b[0][2] !== null && b[0][2] === b[1][1] && b[0][2] === b[2][0]))
