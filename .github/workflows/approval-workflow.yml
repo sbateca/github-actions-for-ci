@@ -4,4 +4,10 @@ on: pull_request_review
 jobs:
   labelWhenApproval:
     runs-on: ubuntu-latest
-    
+
+    steps:
+      - name: recordatory pull request review
+        env: 
+          APPROVALS: "1"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABEL: "Aprobado" 
